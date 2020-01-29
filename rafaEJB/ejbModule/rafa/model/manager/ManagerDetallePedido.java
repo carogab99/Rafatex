@@ -2,12 +2,17 @@ package rafa.model.manager;
 
 import java.util.List;
 
+import javax.ejb.EJB;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+
+import rafa.model.manager.ManagerCliente;
+import rafa.model.manager.ManagerDAO;
+import rafa.model.manager.ManagerProducto;
 import rafa.model.entities.DetallePedido;
 import rafa.model.entities.Pedido;
 
@@ -19,20 +24,18 @@ import rafa.model.entities.Pedido;
 @LocalBean
 public class ManagerDetallePedido {
 
-	@PersistenceContext 
-    EntityManager em;
-    /**
-     * Default constructor. 
-     */
+	@EJB
+	private ManagerProducto managerProductos;
+	@EJB
+	private ManagerCliente managerClientes;
+	@EJB
+	private ManagerDAO managerDAO;
+	
+	
     public ManagerDetallePedido() {
         // TODO Auto-generated constructor stub
     }
 
-    public List<Pedido> FindAllDetalleP()
-    {
-    	String consulta = "SELECT d FROM Pedido d";
-    	Query q = em.createQuery(consulta, DetallePedido.class);
-    	return q.getResultList();
-    }
+    
     
 }
