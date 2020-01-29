@@ -23,18 +23,19 @@ public class BeanCliente implements Serializable
 	
 	private Cliente cliente;
 	private List<Cliente> listaClientes;
-	private Cliente clienteSeleccionado, nuevoCliente;
+	private List<Cliente> listaporClientes;
+	private Cliente clienteSeleccionado;
+	private Cliente clienteLogin;
 	
 	private Integer idCliente;
 	private String apellidoCliente;
 	private String cedulaCliente;
 	private String celular;
-	private String contrasenia;
+	private String contrasenia; 
 	private String correoCliente;
 	private String direccionCliente;
 	private String nombreCliente;
 	private String telefono;
-
 
 	@PostConstruct
 	public void Inicializar()
@@ -79,15 +80,25 @@ public class BeanCliente implements Serializable
 	
 	public String actionLogin() {
 		listaClientes = mCliente.FindAllCLientes();
-		for (Cliente c:listaClientes) {
-			if(c.getCedulaCliente().equals(cliente.getCedulaCliente())
-					&& c.getContrasenia().equals(cliente.getContrasenia())) {
-				idCliente=c.getIdCliente();
-			
+		for (Cliente c:listaClientes) 
+		{
+			if(c.getCedulaCliente().equals(this.cedulaCliente) && c.getContrasenia().equals(this.contrasenia))
+			{
+				clienteLogin=c;
 			}
 		}
 		return "catalogo";
 	}
+	
+	public void consultarDatosCliente(){
+		for (Cliente c:listaClientes) {
+			if (c.getCedulaCliente().equals(this.cedulaCliente)) {
+				cliente= new Cliente();
+				listaClientes = mCliente.FindAllCLientes();
+			}
+		}
+	}
+	
 	//------------------- GETTERS AND SETTERS ----------------------------------
 	public Cliente getCliente() {
 		return cliente;
@@ -158,6 +169,14 @@ public class BeanCliente implements Serializable
 		return nombreCliente;
 	}
 
+	public List<Cliente> getListaporClientes() {
+		return listaporClientes;
+	}
+
+	public void setListaporClientes(List<Cliente> listaporClientes) {
+		this.listaporClientes = listaporClientes;
+	}
+
 	public void setNombreCliente(String nombreCliente) {
 		this.nombreCliente = nombreCliente;
 	}
@@ -170,14 +189,6 @@ public class BeanCliente implements Serializable
 		this.telefono = telefono;
 	}
 
-	public Cliente getNuevoCliente() {
-		return nuevoCliente;
-	}
-
-	public void setNuevoCliente(Cliente nuevoCliente) {
-		this.nuevoCliente = nuevoCliente;
-	}
-
 	public void setListaClientes(List<Cliente> listaClientes) {
 		this.listaClientes = listaClientes;
 	}
@@ -186,5 +197,13 @@ public class BeanCliente implements Serializable
 	}
 	public void setClienteSeleccionado(Cliente clienteSeleccionado) {
 		this.clienteSeleccionado = clienteSeleccionado;
+	}
+
+	public Cliente getClienteLogin() {
+		return clienteLogin;
+	}
+
+	public void setClienteLogin(Cliente clienteLogin) {
+		this.clienteLogin = clienteLogin;
 	}
 }

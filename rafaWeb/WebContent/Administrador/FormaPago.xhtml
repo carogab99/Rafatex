@@ -13,9 +13,13 @@
 	<h:form >
 		<p:menubar>
 			<p:menuitem value="Inicio" action="index" icon="fa fa-home"></p:menuitem>
-			<p:menuitem value="Catalogo" action="catalogo"
+			<p:menuitem value="Pedidos" action="pedidos"
 				icon="fa fa-shopping-cart"></p:menuitem>
-			<p:menuitem value="Facturacion" action="factura" icon="fa fa-codepen"></p:menuitem>
+			<p:menuitem value="Productos" action="Producto" icon="fa fa-bars"></p:menuitem>
+			<p:menuitem value="Agencia" action="Agencia" icon="fa fa-codepen"></p:menuitem>
+			<p:menuitem value="Cliente" action="DetalleClienteA"
+				icon="fa fa-user"></p:menuitem>
+			<p:menuitem value="Color" action="Color" icon="fa fa-pie-chart"></p:menuitem>
 			<f:facet name="options">
 				<p:commandButton value="Salir" action="#{beanLogin.salirSistema()}"
 					icon="fa fa-sign-out" />

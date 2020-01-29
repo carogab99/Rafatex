@@ -1,26 +1,24 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:p="http://primefaces.org/ui"> 
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
 
-<h:head></h:head> 
-<body> 
+<h:head></h:head>
+<body>
 
 	<p:growl>
 		<p:autoUpdate />
 	</p:growl>
-	<h:form >
+	<h:form>
 		<p:menubar>
 			<p:menuitem value="Inicio" action="index" icon="fa fa-home"></p:menuitem>
 			<p:menuitem value="Pedidos" action="pedidos"
 				icon="fa fa-shopping-cart"></p:menuitem>
-			<p:menuitem value="Productos" action="Producto" icon="fa fa-bars"></p:menuitem>
-			<p:menuitem value="Agencia" action="Agencia" icon="fa fa-codepen"></p:menuitem>
-			<p:menuitem value="Empleados" action="Empleado"
-				icon="fa fa-user-plus"></p:menuitem>
-			<p:menuitem value="Color" action="Color" icon="fa fa-pie-chart"></p:menuitem>
+			<p:menuitem value="Iniciar Sesion" action="InicioSesion"
+				icon="fa fa-child"></p:menuitem>
+			<p:menuitem value="Catalogo" action="catalogo" icon="fa fa-circle"></p:menuitem>
 			<f:facet name="options">
 				<p:commandButton value="Salir" action="#{beanLogin.salirSistema()}"
 					icon="fa fa-sign-out" />
@@ -56,10 +54,11 @@
 					<h:outputText value="Contraseña: " />
 					<p:password value="#{beanCliente.cliente.contrasenia}" />
 				</p:panelGrid>
-				<p:commandButton value="Registrar"  icon ="fa fa-save" action="#{beanCliente.actionIngresarCliente()}" />
+				<p:commandButton value="Registrar" icon="fa fa-save"
+					action="#{beanCliente.actionIngresarCliente()}" />
 			</h:form>
 		</p:panel>
 	</div>
 
-</body> 
+</body>
 </html>

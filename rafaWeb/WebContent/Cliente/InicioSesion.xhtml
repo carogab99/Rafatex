@@ -16,10 +16,10 @@
 				<p:panelGrid columns="2">
 				
 					<h:outputText value="Cedula" />
-					<p:inputText value="#{beanCliente.cliente.cedulaCliente}" />
+					<p:inputText value="#{beanCliente.cedulaCliente}" />
 					
 					<h:outputText value="Contrasenia" />
-					<p:password value="#{beanCliente.cliente.contrasenia}" />
+					<p:password value="#{beanCliente.contrasenia}" />
 					
 					<p:commandButton value="Iniciar Sesion" action="#{beanCliente.actionLogin()}"/>
 				</p:panelGrid>
