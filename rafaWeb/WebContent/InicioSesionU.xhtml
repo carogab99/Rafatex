@@ -21,13 +21,14 @@
 
 					<h:outputText value="Contrasenia" />
 					<p:password value="#{beanCliente.contrasenia}" />
-
+<!--  
 					<h:outputText value="Rol" />
 					<p:selectOneMenu value="#{beanRol.rol.idRol}" dynamic="true"
 						style="width:125px">
 						<f:selectItems value="#{beanRol.listarol}" var="rol"
 							itemLabel="#{rol.nombreRol}" itemValue="#{rol.idRol}" />
 					</p:selectOneMenu>
+					-->
 				</p:panelGrid>
 				<p:commandButton value="Iniciar Sesion"
 						action="#{beanEmpleado.actionLogin()}" />

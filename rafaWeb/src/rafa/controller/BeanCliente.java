@@ -44,7 +44,7 @@ public class BeanCliente implements Serializable
 		listaClientes = mCliente.FindAllCLientes();
 	}
 	
-	public void actionIngresarCliente()
+	public String actionIngresarCliente()
 	{
 		try {
 			mCliente.IngresarCLiente(cliente);
@@ -55,6 +55,7 @@ public class BeanCliente implements Serializable
 			JSFUtil.crearMensajeERROR(e.getMessage());
 			e.printStackTrace();
 		}
+		return "InicioSesion";
 	}
 	
 	public void actionEliminarCliente(Integer id) {

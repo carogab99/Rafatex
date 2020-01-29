@@ -14,15 +14,10 @@
 	<h:form>
 		<p:menubar>
 			<p:menuitem value="Inicio" action="index" icon="fa fa-home"></p:menuitem>
-			<p:menuitem value="Pedidos" action="pedidos"
-				icon="fa fa-shopping-cart"></p:menuitem>
 			<p:menuitem value="Iniciar Sesion" action="InicioSesion"
 				icon="fa fa-child"></p:menuitem>
 			<p:menuitem value="Catalogo" action="catalogo" icon="fa fa-circle"></p:menuitem>
-			<f:facet name="options">
-				<p:commandButton value="Salir" action="#{beanLogin.salirSistema()}"
-					icon="fa fa-sign-out" />
-			</f:facet>
+			<p:menuitem value="Salir" action="index" ></p:menuitem>
 		</p:menubar>
 	</h:form>
 	<div align="center">

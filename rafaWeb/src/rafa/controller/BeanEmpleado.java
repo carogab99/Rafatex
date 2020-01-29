@@ -87,14 +87,10 @@ public class BeanEmpleado implements Serializable {
 		for (Empleado e : ListaEmpleados) {
 			if (e.getCedula().equals(this.cedula) && e.getContrasenia().equals(this.contrasenia)) {
 				empleadoLogin = e;
-				break;
+				
 			}
 		}
-		if (empleadoLogin.getRol().getNombreRol().equals("ADMINISTRADOR")) {
-			return "DetalleClienteA";
-		} else {
-			return "Producto";
-		}
+		return "Producto";
 	}
 
 	public void actionListenerColapsadoPanel() {
