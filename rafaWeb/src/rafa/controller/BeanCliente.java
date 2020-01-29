@@ -4,6 +4,7 @@ import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
+import javax.persistence.Column;
 
 import rafa.model.entities.Cliente;
 import rafa.model.manager.ManagerCliente;
@@ -23,6 +24,17 @@ public class BeanCliente implements Serializable
 	private Cliente cliente;
 	private List<Cliente> listaClientes;
 	private Cliente clienteSeleccionado, nuevoCliente;
+	
+	private Integer idCliente;
+	private String apellidoCliente;
+	private String cedulaCliente;
+	private String celular;
+	private String contrasenia;
+	private String correoCliente;
+	private String direccionCliente;
+	private String nombreCliente;
+	private String telefono;
+
 
 	@PostConstruct
 	public void Inicializar()
@@ -68,12 +80,13 @@ public class BeanCliente implements Serializable
 	public String actionLogin() {
 		listaClientes = mCliente.FindAllCLientes();
 		for (Cliente c:listaClientes) {
-			if(c.getCedulaCliente().equals(nuevoCliente.getCedulaCliente())
-					&& c.getContrasenia().equals(nuevoCliente.getContrasenia())) {
-				
+			if(c.getCedulaCliente().equals(cliente.getCedulaCliente())
+					&& c.getContrasenia().equals(cliente.getContrasenia())) {
+				idCliente=c.getIdCliente();
+			
 			}
 		}
-		return "IniciarSesion";
+		return "catalogo";
 	}
 	//------------------- GETTERS AND SETTERS ----------------------------------
 	public Cliente getCliente() {
@@ -85,6 +98,78 @@ public class BeanCliente implements Serializable
 	public List<Cliente> getListaClientes() {
 		return listaClientes;
 	}
+	public Integer getIdCliente() {
+		return idCliente;
+	}
+
+	public void setIdCliente(Integer idCliente) {
+		this.idCliente = idCliente;
+	}
+
+	public String getApellidoCliente() {
+		return apellidoCliente;
+	}
+
+	public void setApellidoCliente(String apellidoCliente) {
+		this.apellidoCliente = apellidoCliente;
+	}
+
+	public String getCedulaCliente() {
+		return cedulaCliente;
+	}
+
+	public void setCedulaCliente(String cedulaCliente) {
+		this.cedulaCliente = cedulaCliente;
+	}
+
+	public String getCelular() {
+		return celular;
+	}
+
+	public void setCelular(String celular) {
+		this.celular = celular;
+	}
+
+	public String getContrasenia() {
+		return contrasenia;
+	}
+
+	public void setContrasenia(String contrasenia) {
+		this.contrasenia = contrasenia;
+	}
+
+	public String getCorreoCliente() {
+		return correoCliente;
+	}
+
+	public void setCorreoCliente(String correoCliente) {
+		this.correoCliente = correoCliente;
+	}
+
+	public String getDireccionCliente() {
+		return direccionCliente;
+	}
+
+	public void setDireccionCliente(String direccionCliente) {
+		this.direccionCliente = direccionCliente;
+	}
+
+	public String getNombreCliente() {
+		return nombreCliente;
+	}
+
+	public void setNombreCliente(String nombreCliente) {
+		this.nombreCliente = nombreCliente;
+	}
+
+	public String getTelefono() {
+		return telefono;
+	}
+
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
+	}
+
 	public Cliente getNuevoCliente() {
 		return nuevoCliente;
 	}
