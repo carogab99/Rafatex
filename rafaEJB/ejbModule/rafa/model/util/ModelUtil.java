@@ -18,7 +18,8 @@ public class ModelUtil {
 		if(cadena==null||cadena.length()==0)
 			return true;
 		return false;
-	}
+	} 
+	
 	/**
 	 * Devuelve el valor del anio actual.
 	 * @return valor correspondiente al anio actual.
