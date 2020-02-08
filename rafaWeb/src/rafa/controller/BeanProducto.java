@@ -89,7 +89,7 @@ public class BeanProducto implements Serializable {
 			precioMayor= producto.getPrecioPorMayor();
 			rutaImagen= producto.getRutaImagen();
 			tamanio= producto.getTamanio();
-			empleado= producto.getEmpleado();
+			//empleado= producto.getEmpleado();
 			color= producto.getColor();
 		return "productos_update";
 	}
@@ -103,7 +103,7 @@ public class BeanProducto implements Serializable {
 		p.setPrecioPorMayor(precioMayor);
 		p.setRutaImagen(rutaImagen);
 		p.setTamanio(tamanio);
-		p.setEmpleado(empleado);
+		//p.setEmpleado(empleado);
 		p.setColor(color);
 		
 		try {

@@ -44,9 +44,9 @@ public class Empleado implements Serializable {
 	@OneToMany(mappedBy="empleado")
 	private List<FacturaCab> facturaCabs;
 
-	//bi-directional many-to-one association to Producto
+	//bi-directional many-to-one association to Bitacora
 	@OneToMany(mappedBy="empleado")
-	private List<Producto> productos;
+	private List<Bitacora> bitacoras;
 
 	public Empleado() {
 	}
@@ -153,26 +153,26 @@ public class Empleado implements Serializable {
 		return facturaCab;
 	}
 
-	public List<Producto> getProductos() {
-		return this.productos;
+	public List<Bitacora> getBitacoras() {
+		return this.bitacoras;
 	}
 
-	public void setProductos(List<Producto> productos) {
-		this.productos = productos;
+	public void setBitacoras(List<Bitacora> bitacoras) {
+		this.bitacoras = bitacoras;
 	}
 
-	public Producto addProducto(Producto producto) {
-		getProductos().add(producto);
-		producto.setEmpleado(this);
+	public Bitacora addBitacora(Bitacora bitacora) {
+		getBitacoras().add(bitacora);
+		bitacora.setEmpleado(this);
 
-		return producto;
+		return bitacora;
 	}
 
-	public Producto removeProducto(Producto producto) {
-		getProductos().remove(producto);
-		producto.setEmpleado(null);
+	public Bitacora removeBitacora(Bitacora bitacora) {
+		getBitacoras().remove(bitacora);
+		bitacora.setEmpleado(null);
 
-		return producto;
+		return bitacora;
 	}
 
 }

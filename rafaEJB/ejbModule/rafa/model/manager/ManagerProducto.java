@@ -49,7 +49,7 @@ public class ManagerProducto {
     	Color color = (Color) em.find(Color.class, idcolor);    
     	Empleado empleado=(Empleado)em.find(Empleado.class, idempleado);
     	producto.setColor(color);
-    	producto.setEmpleado(empleado);
+    	//producto.setEmpleado(empleado);
     	em.persist(producto);
     }
  
@@ -72,7 +72,7 @@ public class ManagerProducto {
   			p.setTamanio(producto.getTamanio());
   			p.setColor(producto.getColor());
   			p.setCantidadMinima(producto.getCantidadMinima());
-  			p.setEmpleado(producto.getEmpleado());
+  			//p.setEmpleado(producto.getEmpleado());
   			//actualizamos:
   			managerDAO.actualizar(p);
   		} catch (Exception e) {

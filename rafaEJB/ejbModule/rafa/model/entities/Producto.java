@@ -54,11 +54,6 @@ public class Producto implements Serializable {
 	@JoinColumn(name="id_color_color")
 	private Color color;
 
-	//bi-directional many-to-one association to Empleado
-	@ManyToOne
-	@JoinColumn(name="id_empleado_empleado")
-	private Empleado empleado;
-
 	public Producto() {
 	}
 
@@ -184,14 +179,6 @@ public class Producto implements Serializable {
 
 	public void setColor(Color color) {
 		this.color = color;
-	}
-
-	public Empleado getEmpleado() {
-		return this.empleado;
-	}
-
-	public void setEmpleado(Empleado empleado) {
-		this.empleado = empleado;
 	}
 
 }

@@ -30,8 +30,6 @@ public class DetallePedido implements Serializable {
 	@Column(name="precio_unitario_venta")
 	private BigDecimal precioUnitarioVenta;
 
-	private BigDecimal subtotal;
-
 	//bi-directional many-to-one association to FormaPago
 	@ManyToOne
 	@JoinColumn(name="id_forma_pago_forma_pago")
@@ -88,14 +86,6 @@ public class DetallePedido implements Serializable {
 
 	public void setPrecioUnitarioVenta(BigDecimal precioUnitarioVenta) {
 		this.precioUnitarioVenta = precioUnitarioVenta;
-	}
-
-	public BigDecimal getSubtotal() {
-		return this.subtotal;
-	}
-
-	public void setSubtotal(BigDecimal subtotal) {
-		this.subtotal = subtotal;
 	}
 
 	public FormaPago getFormaPago() {

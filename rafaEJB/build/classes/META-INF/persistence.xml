@@ -3,6 +3,7 @@
 	<persistence-unit name="rafatexDS" transaction-type="JTA">
 		<jta-data-source>java:/rafatexDS</jta-data-source>
 		<class>rafa.model.entities.Agencia</class>
+		<class>rafa.model.entities.Bitacora</class>
 		<class>rafa.model.entities.Cliente</class>
 		<class>rafa.model.entities.Color</class>
 		<class>rafa.model.entities.DetallePedido</class>
